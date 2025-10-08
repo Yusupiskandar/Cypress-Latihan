@@ -36,6 +36,26 @@ describe("Login Page Test", () => {
         cy.get('.track-shipment-description')
         cy.should('be.visible')
         cy.should('contain.text', 'Kamu bisa masukkan maksimal sampai dengan 20 Kode Pengiriman')
+        //Verify Biaya Pengiriman
+        cy.get('h4.header-check-rates-shipment-title.tx-purple')
+        cy.should('be.visible')
+        cy.should('contain.text', 'Biaya Pengiriman')
+        //verify <label class="check-rates-shipment-label"> <span>Berat (KG)</span></label>
+        cy.get('.check-rates-shipment-label')
+        cy.contains('span', 'Berat (KG)')
+        cy.should('be.visible')
+        cy.get('.input-group')
+        cy.get('img[alt="page.wight"]')
+        cy.should('be.visible')
+        cy.should('have.attr', 'src')
+        cy.should('include', 'paxel_icon_parcelbox_small.png')
+        cy.get('#weight')
+        cy.should('be.visible')
+        cy.should('have.attr', 'placeholder', '0')
+        cy.get('#validation-value').should('have.class', 'no-spin').should('have.attr', 'type', 'hidden')
+        //verify Lokasi Penjemputan
+
+
     })
 
 })
