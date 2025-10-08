@@ -10,6 +10,7 @@ describe("Login Page Test", () => {
         cy.get('h4.header-track-shipment-title.tx-purple')
         cy.should('be.visible')
         cy.should('contain.text', 'Lacak Pengiriman')
+        //cek coloum lacak pengiriman
     })
 
 })
