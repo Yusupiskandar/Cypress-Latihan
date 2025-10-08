@@ -11,6 +11,18 @@ describe("Login Page Test", () => {
         cy.should('be.visible')
         cy.should('contain.text', 'Lacak Pengiriman')
         //cek coloum lacak pengiriman
+        cy.get('#awb-text-area')
+        cy.should('be.visible')
+        cy.should('have.attr', 'placeholder', 'EM.XXXXXXXXXX-20XXXXXX-X-XXXXXX\nEM.XXXXXXXXXX-20XXXXXX-X-XXXXXX')
+        //cek button
+        cy.get('#track-captcha')
+        cy.should('be.visible')
+        cy.should('contain.text', 'Lacak Pengiriman')
+        //cek tombol disable
+        cy.get('#track-captcha')
+        cy.should('have.class', 'disabled')
+        //Klik tombol (jika tidak disabled)
+        //cy.get('#track-captcha').click()
     })
 
 })
