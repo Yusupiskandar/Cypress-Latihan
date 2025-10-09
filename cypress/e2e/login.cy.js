@@ -54,8 +54,12 @@ describe("Login Page Test", () => {
         cy.should('have.attr', 'placeholder', '0')
         cy.get('#validation-value').should('have.class', 'no-spin').should('have.attr', 'type', 'hidden')
         //verify Lokasi Penjemputan
-
-
+        cy.get('.check-rates-shipment-label').contains('span', 'Lokasi Penjemputan').should('be.visible')
+        cy.get('img[alt="Lokasi Penjemputan"]').should('be.visible').should('have.attr', 'src').and('include', 'oval_blue.png')
+        cy.get('#pickup').should('be.visible').and('have.attr', 'placeholder', 'Penjemputan')
+        cy.get('#zipcode-pickup').should('have.class', 'no-spin').and('have.attr', 'type', 'hidden')
+        cy.get('.input-group-append img[alt="Lokasi Penjemputan"]').should('be.visible').should('have.attr', 'src').and('include', 'track.png')
+        //verify Tujuan
     })
 
 })
