@@ -1,5 +1,5 @@
-describe("Login Page Test", () => {
-    it('Visit Login Page', () => {
+describe("Paxel co Test >>Latihan", () => {
+ it('Verify value Lacak Pengiriman & Biaya Pengiriman', () => {
         cy.visit("https://paxel.co/");
         cy.get('img[alt="Paxel"]')
         .should('be.visible')
@@ -69,6 +69,26 @@ describe("Login Page Test", () => {
         cy.get('#check-rates-button').should('have.attr','type', 'submit')
         cy.get('#check-rates-captcha').should('be.visible').contains('Cek Ongkir')
         cy.get('.check-rates-shipment-description').should('be.visible').and('have.text' ,'Kamu bisa masukkan maksimal sampai dengan 3 tujuan')
+    })
+    it('Verify Lacak Pengiriman',() =>{
+        cy.visit("https://paxel.co/")
+        cy.get('#awb-text-area')
+            .should('be.visible')
+            .type('EM.XX')
+        cy.get('#awb-text-area')
+            .should('have.value', 'EM.XX')
+        cy.get('#track-captcha')
+            .click()
+        cy.get('.slidercaptcha')
+            .should('be.visible')
+            .contains('Prove you are human :)')
+        cy.get('.sliderbg')
+            //.should('be,visible')
+        //cy.get('.slider')
+          //  .should('be.visible')
+        //get('.slidertext')
+            //.should('be.visible')
+            //should('have.attr', 'span.text', 'Slide The Puzzle')
     })
 
 })
