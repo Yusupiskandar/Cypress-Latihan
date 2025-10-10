@@ -60,6 +60,15 @@ describe("Login Page Test", () => {
         cy.get('#zipcode-pickup').should('have.class', 'no-spin').and('have.attr', 'type', 'hidden')
         cy.get('.input-group-append img[alt="Lokasi Penjemputan"]').should('be.visible').should('have.attr', 'src').and('include', 'track.png')
         //verify Tujuan
+        cy.get('.mb-1').contains('span', 'Tujuan').should('be.visible')
+        cy.get('.input-group-prepend img[alt="Lokasi Tujuan"]').should('be.visible').and('have.attr', 'src').and('include', 'oval_red.png')
+        cy.get('#destination').should('be.visible').and('have.attr', 'placeholder', 'Tujuan')
+        cy.get('#zipcode-destination').should('have.class', 'no-spin').and('have.attr', 'type', 'hidden')
+        cy.get('.input-group-append img[alt="Lokasi Tujuan"]').should('be.visible').and('have.attr', 'src').and('include', 'track.png')
+        cy.get('#add-destination img').should('be.visible').and('have.attr', 'src').and('include', 'add-new-destination.png')
+        cy.get('#check-rates-button').should('have.attr','type', 'submit')
+        cy.get('#check-rates-captcha').should('be.visible').contains('Cek Ongkir')
+        cy.get('.check-rates-shipment-description').should('be.visible').and('have.text' ,'Kamu bisa masukkan maksimal sampai dengan 3 tujuan')
     })
 
 })
