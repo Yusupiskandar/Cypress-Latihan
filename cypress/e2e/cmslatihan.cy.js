@@ -21,4 +21,7 @@ describe('Verify dashboard admin panel', () => {
         //.should('have.strong.text', 'PAXEL')
     cy.get('.gsi-material-button-contents').click()
   })
+  //it('', () => {
+    
+  //});
 })
