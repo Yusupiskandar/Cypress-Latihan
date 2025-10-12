@@ -15,8 +15,10 @@ describe('Verify dashboard admin panel', () => {
         .should('contains.text', 'PAXEL')
     cy.get('.logo')
         .should('contains.text', 'CMS')
-    
+    cy.get('h3.form-title')
+        .should('be.visible')
+        .should('contains.text', 'Sign In to your Account')
         //.should('have.strong.text', 'PAXEL')
-    //cy.get('.gsi-material-button-contents').click()
+    cy.get('.gsi-material-button-contents').click()
   })
 })
