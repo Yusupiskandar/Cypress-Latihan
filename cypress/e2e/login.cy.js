@@ -1,6 +1,6 @@
 describe("Paxel co Test >>Latihan", () => {
  it('Verify value Lacak Pengiriman & Biaya Pengiriman', () => {
-        cy.visit("https://paxel.co/");
+        cy.visit("  ");
         cy.get('img[alt="Paxel"]')
         .should('be.visible')
         .and('have.attr', 'src')
