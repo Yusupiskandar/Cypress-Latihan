@@ -58,7 +58,19 @@ describe('Verify dashboard admin panel', () => {
     cy.get('.dropdown > .dropdown-toggle').click()
     //cy.get('#logout-link').click()
     cy.get('.dropdown-menu > :nth-child(1) > a').click()
-
+    cy.get('h3').should('be.visible').should('contains.text', 'Profile')
+    cy.get('.page-title > span').should('be.visible').should('contains.text', 'Welcome to PAXEL CMS, yusupiskandar')
+    cy.get(':nth-child(34) > [href="javascript:void(0);"]').click()
+    cy.get('ul.sub-menu a')
+      .contains('a', 'Cities').should('be.visible')
+    cy.get('ul.sub-menu a')
+      .contains('a', 'Districts').should('be.visible')
+    cy.get('ul.sub-menu a')
+      .contains('a', 'Zipcode').should('be.visible')
+    cy.get('ul.sub-menu a')
+      .contains('a', 'Areacode').should('be.visible')
+    cy.get('ul.sub-menu a')
+      .contains('a', 'Intracity Coverage').should('be.visible').click()
   })
 
 
